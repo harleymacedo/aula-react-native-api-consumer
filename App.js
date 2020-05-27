@@ -8,6 +8,7 @@ export default class App extends Component {
     this.state = {
       textoEntrada: '',
       textoResultado: '',
+      textoArea: '',
     }
     this.buscar = this.buscar.bind(this)
     this.atualizarTexto = this.atualizarTexto.bind(this)
@@ -27,8 +28,9 @@ export default class App extends Component {
     })
     .then( (resultado) => {
       let textoResult = 'Nome: ' + resultado.nome
+      let textoAreaResult = 'Área: ' + resultado.area
       console.log(textoResult)
-      this.setState({textoResultado: textoResult})
+      this.setState({textoResultado: textoResult, textoArea: textoAreaResult})
     })
     .catch( (error) => {
       this.setState({textoResultado: 'Valor não encontrado'})
@@ -43,6 +45,7 @@ export default class App extends Component {
         <TextInput placeholder='0 - 3' style={styles.entrada1} keyboardType='numeric' onChange={this.atualizarTexto} />
         <TouchableOpacity style={styles.botao1} onPress={this.buscar} ><Text style={styles.textoBotao1} >Buscar</Text></TouchableOpacity>
         <Text style={styles.resultado1} >{this.state.textoResultado}</Text>
+        <Text style={styles.resultado2} >{this.state.textoArea}</Text>
       </View>
     )
   }
@@ -84,7 +87,12 @@ const styles = StyleSheet.create({
   },
   resultado1: {
     color: '#FFF',
-    fontSize: 22,
+    fontSize: 20,
     marginTop: 30,
+  },
+  resultado2: {
+    color: '#FFF',
+    fontSize: 20,
+    marginTop: 10,
   },
 });
