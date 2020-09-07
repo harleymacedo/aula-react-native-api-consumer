@@ -1,9 +1,9 @@
 import React, {Component} from 'react'
-import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native'
+import { StyleSheet, View} from 'react-native'
 import Busca from './components/Busca'
 
 export default class App extends Component {
-  
+
   render() {
     return (
       <View style={styles.container}>

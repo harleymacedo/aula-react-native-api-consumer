@@ -39,7 +39,9 @@ class Busca extends Component {
                 <Text style={styles.titulo1} >Busca rápida de Professores</Text>
                 <Text style={styles.titulo1} >Informe o termo:</Text>
                 <TextInput placeholder='Termo' style={styles.entrada1} onChange={this.atualizarTexto} />
-                <TouchableOpacity style={styles.botao1} onPress={this.buscar} ><Text style={styles.textoBotao1} >Buscar</Text></TouchableOpacity>
+                <TouchableOpacity style={styles.botao1} onPress={this.buscar} >
+                    <Text style={styles.textoBotao1} >Buscar</Text>
+                </TouchableOpacity>
                 <View>
                     {
                         this.state.dados.map( (item, i) => {
